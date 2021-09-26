@@ -8,9 +8,9 @@
 
 let balance = 500.00;
 class Account {
-  constructor(username) {
-    this.username = username;
-    this.transections = [];
+  constructor() {
+
+    this.transactions = [];
   }
   get balance() {
     let balance = 0;
@@ -48,7 +48,7 @@ class deposit extends Transaction {
     return this.amount;
   }
 };
-class withdrawal extends Transection {
+class Withdrawal extends Transaction {
   get value() {
     return -this.amount;
   }
@@ -64,53 +64,11 @@ class Deposit extends Transaction {
   }
 
   isAllowed() {
-    // deposits always allowed thanks to capitalism.
+
     return true;
   }
 
 };
-
-// class withdrawal {
-
-//   constructor(amount, account) {
-//     this.amount = amount;
-//     this.account = account;
-//   }
-//   commit() {
-//     this.account.balance -= this.amount;
-//   }
-// }
-// class deposit {
-//   constructor(amount, account) {
-//     this.amount = amount;
-//     this.account = account;
-//   }
-//   commit() {
-//     this.account.balance += this.amount;
-//   }
-// }
-//const myAccount = new account("John");
-
-// console.log('Strating Balance:', myAccount.balance);
-
-// t1 = new withdrawal(50.11, myAccount);
-// //t1.commit();
-
-// console.log('Transection 1:', t1);
-// t2 = new withdrawal(9.99, myAccount.balance);
-//t2.commit();
-// console.log('Transaction 2:', t2);
-// console.log("Balance:", myAccount.balance);
-// t3 = new deposit(60.11, myAccount);
-// //t3.commit();
-// console.log('Transection 3:', t3);
-// t4 = new deposit(19.99, myAccount);
-// //console.log("Balance:", myAccount.balance);
-// //t4.commit();
-// console.log('Transaction 4:', t4);
-// console.log("Ending Balance:", myAccount.balance);
-
-
 
 const myAccount = new Account();
 
